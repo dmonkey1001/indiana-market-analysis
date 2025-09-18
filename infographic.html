@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indiana IT Landscape: Dell Strategic Brief</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 380px;
+            }
+        }
+        .flowchart-box {
+            border: 2px solid;
+            padding: 1rem;
+            text-align: center;
+            border-radius: 0.5rem;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .flowchart-line {
+            height: 2px;
+            width: 100%;
+        }
+        .flowchart-line-vertical {
+            width: 2px;
+            height: 40px;
+            margin: 0 auto;
+        }
+        .kpi-box {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-[#003F5C] mb-2">Strategic Opportunity Analysis: State of Indiana</h1>
+            <p class="text-lg text-slate-600">An Executive IT Brief for Dell Technologies</p>
+        </header>
+
+        <main class="space-y-12">
+            
+            <section id="overview" class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-[#003F5C] text-center mb-6">Indiana At a Glance: Key IT Metrics</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="kpi-box border-l-4 border-[#FFA600]">
+                        <p class="text-5xl font-extrabold text-[#003F5C]">$485M</p>
+                        <p class="text-slate-500 font-medium mt-2">Estimated Annual State IT Spend</p>
+                    </div>
+                    <div class="kpi-box border-l-4 border-[#EF5675]">
+                        <p class="text-5xl font-extrabold text-[#003F5C]">100+</p>
+                        <p class="text-slate-500 font-medium mt-2">Executive Branch Agencies Served</p>
+                    </div>
+                    <div class="kpi-box border-l-4 border-[#7A5195]">
+                        <p class="text-5xl font-extrabold text-[#003F5C]">~31,000</p>
+                        <p class="text-slate-500 font-medium mt-2">State Employees Supported</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="structure">
+                <h2 class="text-3xl font-bold text-[#003F5C] text-center mb-6">The IT Power Structure: Centralization & Agency Roles</h2>
+                <div class="bg-white rounded-lg shadow-md p-6 md:p-8">
+                    <p class="text-center text-slate-600 mb-8 max-w-3xl mx-auto">Indiana operates under a primarily centralized IT model, with the Indiana Office of Technology (IOT) serving as the core service provider. However, major agencies retain significant influence over application-level decisions and strategy, creating a hybrid "hub-and-spoke" environment ripe for strategic consultation.</p>
+                    <div class="w-full text-sm text-[#003F5C]">
+                        <div class="flex justify-center">
+                            <div class="flowchart-box border-[#003F5C] bg-blue-50">
+                                <span class="font-bold">Governor Eric Holcomb</span>
+                                <span class="text-xs text-slate-500">Executive Authority</span>
+                            </div>
+                        </div>
+                        <div class="flowchart-line-vertical bg-[#7A5195]"></div>
+                        <div class="flex justify-center">
+                            <div class="flowchart-box border-[#7A5195] bg-purple-50 w-2/3 md:w-1/3">
+                                <span class="font-bold">Indiana Office of Technology (IOT)</span>
+                                <span class="text-xs text-slate-500">CIO Tracy Barnes</span>
+                                <span class="text-xs mt-1">(Infrastructure, Security, Policy)</span>
+                            </div>
+                        </div>
+                        <div class="flowchart-line-vertical bg-[#BC5090]"></div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-4 relative">
+                           <div class="absolute top-[-20px] left-0 right-0 h-0.5 bg-[#BC5090] hidden md:block"></div>
+                           <div class="absolute top-[-20px] left-1/2 w-0.5 h-5 bg-[#BC5090] hidden md:block"></div>
+                           <div class="flowchart-box border-[#EF5675] bg-red-50">
+                               <span class="font-bold">Family and Social Services (FSSA)</span>
+                               <span class="text-xs text-slate-500">Largest Agency Spend</span>
+                           </div>
+                           <div class="flowchart-box border-[#FF764A] bg-orange-50">
+                               <span class="font-bold">Department of Workforce Development (DWD)</span>
+                               <span class="text-xs text-slate-500">Modernization Projects</span>
+                           </div>
+                           <div class="flowchart-box border-[#FFA600] bg-yellow-50">
+                               <span class="font-bold">Bureau of Motor Vehicles (BMV)</span>
+                               <span class="text-xs text-slate-500">Citizen-Facing Services</span>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="funding">
+                <h2 class="text-3xl font-bold text-[#003F5C] text-center mb-6">Decoding the Dollars: Funding Sources & Allocation</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="font-bold text-xl text-center mb-4 text-[#374C80]">IT Budget Trend by Funding Source</h3>
+                        <p class="text-center text-slate-600 text-sm mb-4">While state appropriations remain the primary funding source, note the significant injection of Federal funds (e.g., ARPA) in recent years, driving short-term modernization projects. Dell can align with these temporary funding streams for long-term integration.</p>
+                        <div class="chart-container">
+                            <canvas id="fundingChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="font-bold text-xl text-center mb-4 text-[#374C80]">Project Spending Allocation</h3>
+                        <p class="text-center text-slate-600 text-sm mb-4">New project investments are heavily skewed towards Cybersecurity and Cloud enablement, reflecting IOT's core priorities. This presents a direct opportunity for Dell's secure infrastructure and hybrid cloud portfolio.</p>
+                        <div class="chart-container">
+                            <canvas id="allocationChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="priorities">
+                 <h2 class="text-3xl font-bold text-[#003F5C] text-center mb-6">Statewide Technology Priorities for 2025-2026</h2>
+                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                     <div class="kpi-box items-center">
+                         <span class="text-5xl">🛡️</span>
+                         <h3 class="text-xl font-bold mt-2 text-[#7A5195]">Cybersecurity First</h3>
+                         <p class="text-slate-500 mt-1 text-sm">Implementing a Zero Trust framework and modernizing security operations are top priorities to combat increasing threats.</p>
+                     </div>
+                     <div class="kpi-box items-center">
+                         <span class="text-5xl">☁️</span>
+                         <h3 class="text-xl font-bold mt-2 text-[#BC5090]">Hybrid Cloud Acceleration</h3>
+                         <p class="text-slate-500 mt-1 text-sm">A "cloud-smart" approach focuses on migrating appropriate workloads while modernizing on-prem infrastructure for a sustainable hybrid model.</p>
+                     </div>
+                     <div class="kpi-box items-center">
+                         <span class="text-5xl">📊</span>
+                         <h3 class="text-xl font-bold mt-2 text-[#EF5675]">Data-Driven Governance</h3>
+                         <p class="text-slate-500 mt-1 text-sm">Breaking down agency data silos to improve citizen services and enable better policy decisions through analytics platforms.</p>
+                     </div>
+                     <div class="kpi-box items-center">
+                         <span class="text-5xl">💻</span>
+                         <h3 class="text-xl font-bold mt-2 text-[#FF764A]">Workforce Enablement</h3>
+                         <p class="text-slate-500 mt-1 text-sm">Upgrading end-user devices and collaboration tools to support a flexible, post-pandemic workforce and attract new talent.</p>
+                     </div>
+                 </div>
+            </section>
+
+            <section id="challenges">
+                <h2 class="text-3xl font-bold text-[#003F5C] text-center mb-6">Navigating the Challenges</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                     <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="font-bold text-xl text-center mb-4 text-[#374C80]">Key Operational & Technical Hurdles</h3>
+                        <p class="text-center text-slate-600 text-sm mb-4">The radar chart illustrates the perceived impact of major challenges. The talent gap and legacy systems represent the most significant hurdles, areas where managed services and turnkey solutions from Dell can provide immediate value.</p>
+                        <div class="chart-container">
+                            <canvas id="challengesChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6 flex flex-col justify-center">
+                        <h3 class="font-bold text-xl text-center mb-4 text-[#374C80]">Political & Procurement Landscape</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <span class="text-blue-500 text-xl mr-3">✓</span>
+                                <div>
+                                    <h4 class="font-semibold">Complex Procurement Cycles</h4>
+                                    <p class="text-slate-600 text-sm">Navigating the Quantity Purchase Agreement (QPA) system is key. Dell's established presence is an advantage.</p>
+                                </div>
+                            </li>
+                             <li class="flex items-start">
+                                <span class="text-blue-500 text-xl mr-3">✓</span>
+                                <div>
+                                    <h4 class="font-semibold">Biennial Budgeting</h4>
+                                    <p class="text-slate-600 text-sm">Aligning proposals with the two-year state budget cycle is critical for securing funding for large-scale projects.</p>
+                                </div>
+                            </li>
+                             <li class="flex items-start">
+                                <span class="text-blue-500 text-xl mr-3">✓</span>
+                                <div>
+                                    <h4 class="font-semibold">Risk Aversion</h4>
+                                    <p class="text-slate-600 text-sm">Public sector leaders often favor proven, low-risk solutions. Emphasizing Dell's reliability and support is paramount.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="opportunity">
+                <h2 class="text-3xl font-bold text-[#003F5C] text-center mb-6">The Dell Advantage: Strategic Alignment</h2>
+                <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                    <p class="text-center text-slate-600 mb-8 max-w-3xl mx-auto">Dell Technologies is uniquely positioned to address Indiana's core IT challenges and priorities. The strategy should focus on positioning Dell not just as a hardware vendor, but as a consultative partner in the state's modernization journey.</p>
+                    <div class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-1 items-center bg-slate-50 p-4 rounded-lg">
+                            <div class="md:col-span-1 text-center md:text-left">
+                                <h4 class="font-bold text-lg text-[#7A5195]">Challenge: Hybrid Cloud Complexity</h4>
+                                <p class="text-slate-600 text-sm">Managing disparate on-prem and public cloud environments.</p>
+                            </div>
+                            <div class="text-2xl text-center text-[#BC5090] font-light my-2 md:my-0">→</div>
+                            <div class="md:col-span-1 bg-white p-3 rounded shadow-sm text-center">
+                                <h4 class="font-bold text-lg text-[#003F5C]">Dell Solution: APEX & VMware</h4>
+                                <p class="text-slate-600 text-sm">Deliver a consistent cloud operating model with flexible, consumption-based infrastructure for a true hybrid cloud experience.</p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-1 items-center bg-slate-50 p-4 rounded-lg">
+                            <div class="md:col-span-1 text-center md:text-left">
+                                <h4 class="font-bold text-lg text-[#EF5675]">Challenge: Cybersecurity Threats & Legacy Systems</h4>
+                                <p class="text-slate-600 text-sm">Securing aging infrastructure while moving toward Zero Trust.</p>
+                            </div>
+                            <div class="text-2xl text-center text-[#BC5090] font-light my-2 md:my-0">→</div>
+                            <div class="md:col-span-1 bg-white p-3 rounded shadow-sm text-center">
+                                <h4 class="font-bold text-lg text-[#003F5C]">Dell Solution: Secure Infrastructure Portfolio</h4>
+                                <p class="text-slate-600 text-sm">Leverage intrinsic security in PowerEdge servers, PowerStore storage, and partner with Secureworks for a comprehensive defense-in-depth strategy.</p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-1 items-center bg-slate-50 p-4 rounded-lg">
+                            <div class="md:col-span-1 text-center md:text-left">
+                                <h4 class="font-bold text-lg text-[#FF764A]">Challenge: IT Talent Gap & Workforce Needs</h4>
+                                <p class="text-slate-600 text-sm">Attracting, retaining, and upskilling technical staff.</p>
+                            </div>
+                            <div class="text-2xl text-center text-[#BC5090] font-light my-2 md:my-0">→</div>
+                            <div class="md:col-span-1 bg-white p-3 rounded shadow-sm text-center">
+                                <h4 class="font-bold text-lg text-[#003F5C]">Dell Solution: Managed Services & Modern Devices</h4>
+                                <p class="text-slate-600 text-sm">Offload infrastructure management with Dell services and equip the state's workforce with high-performance Latitude and Precision devices.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="text-center mt-12 pt-6 border-t border-slate-200">
+            <p class="text-slate-500 text-sm">Dell Technologies Confidential | For Internal Strategic Planning Only</p>
+        </footer>
+
+    </div>
+
+    <script>
+        const brilliantBlues = ['#003F5C', '#7A5195', '#EF5675', '#FFA600', '#374C80', '#BC5090', '#FF764A'];
+        
+        function wrapLabels(label, maxLength) {
+            if (typeof label !== 'string' || label.length <= maxLength) {
+                return label;
+            }
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + word).length > maxLength && currentLine.length > 0) {
+                    lines.push(currentLine);
+                    currentLine = '';
+                }
+                currentLine += (currentLine.length > 0 ? ' ' : '') + word;
+            }
+            lines.push(currentLine);
+            return lines;
+        }
+
+        const tooltipTitleCallback = {
+            title: function(tooltipItems) {
+                const item = tooltipItems[0];
+                let label = item.chart.data.labels[item.dataIndex];
+                if (Array.isArray(label)) {
+                    return label.join(' ');
+                }
+                return label;
+            }
+        };
+
+        const fundingCtx = document.getElementById('fundingChart').getContext('2d');
+        const fundingChart = new Chart(fundingCtx, {
+            type: 'bar',
+            data: {
+                labels: ['2023', '2024 (Est.)', '2025 (Proj.)'],
+                datasets: [{
+                    label: 'State Appropriations',
+                    data: [320, 310, 330],
+                    backgroundColor: '#003F5C',
+                }, {
+                    label: 'Federal Funds',
+                    data: [85, 95, 75],
+                    backgroundColor: '#7A5195',
+                }, {
+                    label: 'Other/Agency Funds',
+                    data: [60, 80, 80],
+                    backgroundColor: '#EF5675',
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        stacked: true,
+                    },
+                    y: {
+                        stacked: true,
+                        title: {
+                            display: true,
+                            text: 'Budget in Millions (USD)'
+                        }
+                    }
+                },
+                plugins: {
+                    tooltip: { callbacks: tooltipTitleCallback }
+                }
+            }
+        });
+
+        const allocationCtx = document.getElementById('allocationChart').getContext('2d');
+        const allocationChart = new Chart(allocationCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Cybersecurity', 'Cloud & Infrastructure', 'Data Analytics', 'Citizen Services Apps', 'Agency Operations'],
+                datasets: [{
+                    data: [35, 30, 15, 12, 8],
+                    backgroundColor: brilliantBlues,
+                    borderColor: '#fff',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                    },
+                    tooltip: { callbacks: tooltipTitleCallback }
+                }
+            }
+        });
+
+        const challengesCtx = document.getElementById('challengesChart').getContext('2d');
+        const originalLabels = ['Legacy System Modernization', 'Cybersecurity Threats', 'IT Talent Gap', 'Budget Constraints', 'Inter-agency Data Sharing'];
+        const wrappedChallengesLabels = originalLabels.map(label => wrapLabels(label, 16));
+
+        const challengesChart = new Chart(challengesCtx, {
+            type: 'radar',
+            data: {
+                labels: wrappedChallengesLabels,
+                datasets: [{
+                    label: 'Impact on Operations',
+                    data: [9, 8, 9, 7, 6],
+                    backgroundColor: 'rgba(239, 86, 117, 0.2)',
+                    borderColor: '#EF5675',
+                    pointBackgroundColor: '#EF5675',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: '#EF5675'
+                }, {
+                    label: 'Difficulty to Solve',
+                    data: [8, 7, 9, 6, 8],
+                    backgroundColor: 'rgba(122, 81, 149, 0.2)',
+                    borderColor: '#7A5195',
+                    pointBackgroundColor: '#7A5195',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: '#7A5195'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        angleLines: {
+                            display: false
+                        },
+                        suggestedMin: 0,
+                        suggestedMax: 10,
+                        pointLabels: {
+                            font: {
+                                size: 10
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    tooltip: { callbacks: tooltipTitleCallback }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
